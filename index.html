@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Steve Clark — Enterprise Sales & Strategic Accounts</title>
   <meta name="description" content="Steve Clark — enterprise sales & strategic account leader with 15+ years in tech. Proven quota attainment, complex sales wins, and pipeline growth." />
+
+  <!-- Favicon / site icon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     /* ---------------- THEME TOKENS ---------------- */
     :root{
@@ -53,10 +58,11 @@
       border-bottom:1px solid var(--border);
     }
     nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:800}
-    .dot{width:12px;height:12px;border-radius:50%;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow:0 0 18px var(--accent)}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:800}
+    .logo{
+      width:22px;height:22px;border-radius:6px;object-fit:cover;
+      box-shadow:0 0 10px color-mix(in oklab, var(--accent), #000 20%);
+    }
     .links a{margin-left:14px;opacity:.9}
 
     .theme-toggle{
@@ -117,7 +123,11 @@
   <header>
     <div class="container">
       <nav>
-        <div class="brand"><span class="dot"></span><span>Steve Clark</span></div>
+        <div class="brand">
+          <!-- Logo visible in header (uses the same favicon.png) -->
+          <img src="favicon.png" alt="" class="logo" />
+          <span>Steve Clark</span>
+        </div>
         <div class="links" role="navigation" aria-label="Primary">
           <a href="#about">About</a>
           <a href="#expertise">Expertise</a>
@@ -252,7 +262,6 @@
           </ul>
         </article>
 
-        <!-- Added Xiotech / X-IO Storage experience -->
         <article class="item">
           <h3>Manager, International Sales & Service — <strong>X-IO Technologies (Xiotech)</strong></h3>
           <div class="muted">Jan 2011 – Jan 2015 • Colorado Springs, CO • Enterprise Storage</div>
