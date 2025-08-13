@@ -8,50 +8,109 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* ---------------- THEME TOKENS ---------------- */
     :root{
       --bg:#0b1220; --card:#121a2b; --muted:#90a0c2; --text:#e9efff;
       --accent:#5ca9ff; --accent2:#86ffc2; --ring: rgba(92,169,255,.35);
       --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --border: rgba(134,255,194,.12);
     }
+    /* Light theme overrides */
+    :root[data-theme="light"]{
+      --bg:#f7f9fc; --card:#ffffff; --muted:#5a6b85; --text:#10223a;
+      --accent:#0b64ff; --accent2:#0dcf8f; --ring: rgba(11,100,255,.22);
+      --border: rgba(16,34,58,.12);
+      --shadow:0 10px 30px rgba(16,34,58,.08);
+    }
+
     *{box-sizing:border-box}
-    html,body{margin:0;background:
-      radial-gradient(1200px 700px at 90% -10%, rgba(92,169,255,.12), transparent 60%),
-      radial-gradient(900px 600px at -10% 30%, rgba(134,255,194,.12), transparent 60%),
-      var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+    html,body{
+      margin:0;
+      background:
+        radial-gradient(1200px 700px at 90% -10%, rgba(92,169,255,.12), transparent 60%),
+        radial-gradient(900px 600px at -10% 30%, rgba(134,255,194,.12), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      transition: background .3s ease, color .3s ease;
+    }
+    :root[data-theme="light"] html, :root[data-theme="light"] body{
+      background:
+        radial-gradient(1200px 700px at 90% -10%, rgba(11,100,255,.06), transparent 60%),
+        radial-gradient(900px 600px at -10% 30%, rgba(13,207,143,.06), transparent 60%),
+        var(--bg);
+    }
+
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
     .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(to bottom, rgba(11,18,32,.85), rgba(11,18,32,.4));
-      border-bottom:1px solid rgba(134,255,194,.08); z-index:10}
-    nav{display:flex;align-items:center;justify-content:space-between}
+
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(to bottom, color-mix(in oklab, var(--bg), transparent 30%), transparent);
+      border-bottom:1px solid var(--border);
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;gap:10px;align-items:center;font-weight:800}
-    .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 18px var(--accent)}
+    .dot{width:12px;height:12px;border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 0 18px var(--accent)}
     .links a{margin-left:14px;opacity:.9}
+
+    .theme-toggle{
+      display:inline-flex;align-items:center;gap:8px;
+      background:transparent;border:1px solid var(--border);color:var(--text);
+      padding:8px 12px;border-radius:999px;cursor:pointer;
+    }
+    .theme-toggle:focus{outline:2px solid var(--ring);outline-offset:2px}
+
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:56px 0}
     h1{font-size:48px;line-height:1.05;margin:10px 0 6px}
     .subtitle{color:var(--muted);font-size:18px}
     .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .btn{display:inline-flex;gap:10px;align-items:center;background:linear-gradient(135deg, var(--accent), #3e7fff);
-      color:white;padding:12px 18px;border-radius:12px;font-weight:700;border:0;box-shadow:var(--shadow)}
-    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(92,169,255,.35);box-shadow:none}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid rgba(134,255,194,.12);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .btn{
+      display:inline-flex;gap:10px;align-items:center;
+      background:linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent), #000 20%));
+      color:white;padding:12px 18px;border-radius:12px;font-weight:700;border:0;box-shadow:var(--shadow)
+    }
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid color-mix(in oklab, var(--accent), transparent 60%);box-shadow:none}
+
+    .card{
+      background:linear-gradient(180deg, color-mix(in oklab, #fff, transparent 94%), color-mix(in oklab, #fff, transparent 96%));
+      border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)
+    }
+
+    .headshot{
+      width:120px;height:120px;border-radius:50%;object-fit:cover;
+      border:3px solid color-mix(in oklab, var(--accent), #fff 10%);
+      box-shadow:0 6px 16px color-mix(in oklab, #000, transparent 70%);
+    }
+
     section{padding:18px 0}
     section h2{font-size:28px;margin:6px 0 12px}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
-    .kpi{grid-column:span 4;background:var(--card);border:1px solid rgba(134,255,194,.1);
+    .kpi{grid-column:span 4;background:var(--card);border:1px solid color-mix(in oklab, var(--border), #000 10%);
       border-radius:var(--radius);padding:18px}
     .kpi .n{font-size:34px;font-weight:800}
     .muted{color:var(--muted)}
     .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .chip{border:1px solid rgba(134,255,194,.25);background:rgba(134,255,194,.09);
-      color:#d7fff0;padding:8px 10px;border-radius:999px;font-weight:600}
+    .chip{border:1px solid color-mix(in oklab, var(--accent2), transparent 65%);background:color-mix(in oklab, var(--accent2), transparent 90%);
+      color:color-mix(in oklab, var(--text), #fff 10%);padding:8px 10px;border-radius:999px;font-weight:600}
+
     .timeline{display:grid;gap:14px}
-    .item{background:var(--card);border:1px solid rgba(92,169,255,.15);border-radius:var(--radius);padding:18px}
+    .item{background:var(--card);border:1px solid color-mix(in oklab, var(--border), #000 10%);border-radius:var(--radius);padding:18px}
     .item h3{margin:.2rem 0}
-    footer{padding:36px 0;margin-top:24px;border-top:1px solid rgba(134,255,194,.12);text-align:center;color:var(--muted)}
-    @media (max-width: 900px){.hero{grid-template-columns:1fr} h1{font-size:38px} .kpi{grid-column:span 12}}
+
+    footer{padding:36px 0;margin-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--muted)}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      h1{font-size:38px}
+      .kpi{grid-column:span 12}
+      .hero-aside{display:flex;gap:16px;align-items:center}
+    }
   </style>
 </head>
 <body>
@@ -59,13 +118,14 @@
     <div class="container">
       <nav>
         <div class="brand"><span class="dot"></span><span>Steve Clark</span></div>
-        <div class="links">
+        <div class="links" role="navigation" aria-label="Primary">
           <a href="#about">About</a>
           <a href="#expertise">Expertise</a>
           <a href="#experience">Experience</a>
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark theme">🌙 Theme</button>
       </nav>
     </div>
   </header>
@@ -86,8 +146,10 @@
           <a class="btn secondary" href="Steve_Clark_Resume.pdf" download>Download Résumé (PDF)</a>
         </div>
       </div>
-      <aside class="card">
+
+      <aside class="card hero-aside">
         <div style="display:grid;gap:10px">
+          <img src="headshot.jpg" alt="Headshot of Steve Clark" class="headshot" />
           <div><span class="muted">Location</span><div>Eagle Mountain, UT • Remote-friendly</div></div>
           <div><span class="muted">Phone</span><div><a href="tel:+18016998762">(801) 699-8762</a></div></div>
           <div><span class="muted">Email</span><div><a href="mailto:steve@steveclarkwins.com">steve@steveclarkwins.com</a></div></div>
@@ -95,7 +157,7 @@
       </aside>
     </section>
 
-    <!-- KPIs / QUICK WINS (edit as you like) -->
+    <!-- KPIs / QUICK WINS -->
     <section id="wins">
       <div class="grid">
         <div class="kpi"><div class="n">100%+</div><div class="muted">Quota for 9 out of 10 previous years</div></div>
@@ -114,7 +176,7 @@
       </p>
     </section>
 
-    <!-- AREAS OF EXPERTISE -->
+    <!-- EXPERTISE -->
     <section id="expertise">
       <h2>Areas of Expertise</h2>
       <div class="skills">
@@ -134,7 +196,7 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE (trimmed to ~last 10–12 years) -->
+    <!-- EXPERIENCE -->
     <section id="experience">
       <h2>Professional Experience</h2>
       <div class="timeline">
@@ -143,7 +205,7 @@
           <h3>Senior Strategic Account Manager — <strong>DryvIQ</strong></h3>
           <div class="muted">Aug 2024 – Present • Remote (Ann Arbor, MI) • Unstructured Data Management</div>
           <ul>
-            <li>Large multi-year win with major US financial institution, several other large deals closed and won.</li>
+            <li>Large multi-year win with major US financial institution; several other large deals closed and won.</li>
             <li>Owns key accounts with plans, targeted messaging, and growth strategies for deep penetration and multi-threaded access.</li>
             <li>Largest share of <em>self-sourced</em> pipeline across the team.</li>
           </ul>
@@ -154,7 +216,7 @@
           <div class="muted">Jan 2024 – Jul 2024 • Remote (San Francisco, CA) • Data Orchestration (Apache Airflow)</div>
           <ul>
             <li>100%+ quota both quarters; most self-sourced revenue in region.</li>
-            <li>Used MEDDICC sales methodology effectively, skillfully managing the sales cycle with rigorous attention to detail</li>
+            <li>Used MEDDICC effectively, managing complex cycles with rigorous attention to detail.</li>
             <li>Drove multi-stakeholder, highly technical evaluations with longer budget cycles.</li>
           </ul>
         </article>
@@ -186,7 +248,18 @@
           <ul>
             <li>Built greenfield Desert Mountain territory; highest self-sourced pipeline and new logos in West (2016).</li>
             <li>102% quota in a new, challenging territory; multiple FinServ wins via channel.</li>
-            <li>Led marketing events with vertical focus to expand enterprise pipeline; Holden sales methodology certified.</li>
+            <li>Led marketing events with vertical focus to expand enterprise pipeline; Holden methodology certified.</li>
+          </ul>
+        </article>
+
+        <!-- Added Xiotech / X-IO Storage experience -->
+        <article class="item">
+          <h3>Manager, International Sales & Service — <strong>X-IO Technologies (Xiotech)</strong></h3>
+          <div class="muted">Jan 2011 – Jan 2015 • Colorado Springs, CO • Enterprise Storage</div>
+          <ul>
+            <li>Managed a team of 5 sellers across Asia; built distributor and channel relationships globally.</li>
+            <li>Delivered 200% YoY revenue growth; developed brand-new markets and expanded enterprise pipeline.</li>
+            <li>Closed multiple $500K+ deals, including the largest cloud deal in company history to date.</li>
           </ul>
         </article>
 
@@ -216,7 +289,36 @@
   <footer>
     <div class="container">© <span id="y"></span> Steve Clark • steveclarkwins.com</div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+
+  <script>
+    // --- Year stamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // --- Theme: default to user's OS preference; persist toggle in localStorage
+    (function(){
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+      if(saved){
+        root.setAttribute('data-theme', saved);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
+        root.setAttribute('data-theme','light');
+      }
+      const btn = document.getElementById('themeToggle');
+      const updateLabel = () => {
+        const t = root.getAttribute('data-theme') || 'dark';
+        btn.textContent = (t === 'light') ? '🌙 Theme' : '☀️ Theme';
+        btn.setAttribute('aria-pressed', t === 'light' ? 'false' : 'true');
+      };
+      updateLabel();
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateLabel();
+      });
+    })();
+  </script>
 </body>
 </html>
 
