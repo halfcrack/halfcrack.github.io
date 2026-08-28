@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Steve Clark — Enterprise Sales & Strategic Accounts</title>
-  <meta name="description" content="Steve Clark — enterprise sales & strategic account leader with 15+ years in tech. Proven quota attainment, complex sales wins, and pipeline growth." />
+  <title>Steve Clark — Enterprise Sales & Strategic Accounts Leader</title>
+  <meta name="description" content="Steve Clark — Enterprise Sales & Strategic Accounts Leader with 15+ years in tech. Proven quota attainment, complex sales wins, and pipeline growth." />
 
   <!-- Favicon / site icon -->
   <link rel="icon" type="image/png" href="favicon.png">
@@ -73,8 +73,8 @@
     .theme-toggle:focus{outline:2px solid var(--ring);outline-offset:2px}
 
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:56px 0}
-    h1{font-size:48px;line-height:1.05;margin:10px 0 6px}
-    .subtitle{color:var(--muted);font-size:18px}
+    h1{font-size:44px;line-height:1.1;margin:10px 0 6px}
+    .subtitle{color:var(--muted);font-size:17px;line-height:1.5}
     .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
     .btn{
       display:inline-flex;gap:10px;align-items:center;
@@ -95,25 +95,36 @@
     }
 
     section{padding:18px 0}
-    section h2{font-size:28px;margin:6px 0 12px}
+    section h2{font-size:26px;margin:6px 0 14px;letter-spacing:-0.2px}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
     .kpi{grid-column:span 4;background:var(--card);border:1px solid color-mix(in oklab, var(--border), #000 10%);
       border-radius:var(--radius);padding:18px}
-    .kpi .n{font-size:34px;font-weight:800}
+    .kpi .n{font-size:32px;font-weight:800;color:var(--accent)}
     .muted{color:var(--muted)}
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    
+    .skills-group{margin-bottom:14px}
+    .skills-group strong{display:block;margin-bottom:6px;color:var(--text);font-size:15px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
     .chip{border:1px solid color-mix(in oklab, var(--accent2), transparent 65%);background:color-mix(in oklab, var(--accent2), transparent 90%);
-      color:color-mix(in oklab, var(--text), #fff 10%);padding:8px 10px;border-radius:999px;font-weight:600}
+      color:color-mix(in oklab, var(--text), #fff 10%);padding:6px 12px;border-radius:999px;font-weight:600;font-size:13.5px}
 
     .timeline{display:grid;gap:14px}
-    .item{background:var(--card);border:1px solid color-mix(in oklab, var(--border), #000 10%);border-radius:var(--radius);padding:18px}
-    .item h3{margin:.2rem 0}
+    .item{background:var(--card);border:1px solid color-mix(in oklab, var(--border), #000 10%);border-radius:var(--radius);padding:20px}
+    .item h3{margin:.2rem 0;font-size:18px}
+    .item ul{margin:10px 0 0 0;padding-left:20px}
+    .item li{margin-bottom:6px;line-height:1.45}
+
+    .education-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .education-item{background:var(--card);border:1px solid color-mix(in oklab, var(--border), #000 10%);border-radius:var(--radius);padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+    @media (max-width: 600px){
+      .education-item{flex-direction:column;align-items:flex-start;gap:4px}
+    }
 
     footer{padding:36px 0;margin-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--muted)}
 
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr}
-      h1{font-size:38px}
+      h1{font-size:36px}
       .kpi{grid-column:span 12}
       .hero-aside{display:flex;gap:16px;align-items:center}
     }
@@ -124,7 +135,6 @@
     <div class="container">
       <nav>
         <div class="brand">
-          <!-- Logo visible in header (uses the same favicon.png) -->
           <img src="favicon.png" alt="" class="logo" />
           <span>Steve Clark</span>
         </div>
@@ -144,15 +154,13 @@
     <!-- HERO -->
     <section class="hero">
       <div>
-        <h1>Enterprise Sales & Strategic Accounts</h1>
+        <h1>Enterprise Sales &amp; Strategic Accounts Leader</h1>
         <p class="subtitle">
-          Accomplished, growth-focused sales leader with 15+ years in high-growth tech.
-          Expert at closing complex deals, building pipelines, and communicating value across executive and technical stakeholders.
-          Proficient in Mandarin Chinese and Malay.
+          Accomplished, growth-focused enterprise sales leader with 15+ years of high-growth technology experience driving multi-million dollar direct and partner sales. Proven track record navigating complex, long-cycle sales motions, expanding strategic key accounts, and articulating clear business value across C-level executive and technical stakeholders. Fluent in English; proficient in Mandarin Chinese and Malay.
         </p>
         <div class="cta">
           <a class="btn" href="mailto:steve@steveclarkwins.com">Email Me</a>
-          <a class="btn secondary" href="https://www.linkedin.com/in/steve-clark-wins/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn secondary" href="https://linkedin.com/in/steve-clark-wins" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn secondary" href="Steve_Clark_Resume.pdf" download>Download Résumé (PDF)</a>
         </div>
       </div>
@@ -160,9 +168,10 @@
       <aside class="card hero-aside">
         <div style="display:grid;gap:10px">
           <img src="headshot.jpg" alt="Headshot of Steve Clark" class="headshot" />
-          <div><span class="muted">Location</span><div>Eagle Mountain, UT • Remote-friendly</div></div>
+          <div><span class="muted">Location</span><div>Eagle Mountain, UT (Remote-ready)</div></div>
           <div><span class="muted">Phone</span><div><a href="tel:+18016998762">(801) 699-8762</a></div></div>
           <div><span class="muted">Email</span><div><a href="mailto:steve@steveclarkwins.com">steve@steveclarkwins.com</a></div></div>
+          <div><span class="muted">Website</span><div><a href="https://steveclarkwins.com">steveclarkwins.com</a></div></div>
         </div>
       </aside>
     </section>
@@ -170,39 +179,63 @@
     <!-- KPIs / QUICK WINS -->
     <section id="wins">
       <div class="grid">
-        <div class="kpi"><div class="n">100%+</div><div class="muted">Quota for 9 out of 10 previous years</div></div>
-        <div class="kpi"><div class="n">550%+</div><div class="muted">Pipeline vs. quota (GitLab FY2021)</div></div>
-        <div class="kpi"><div class="n">2× Pres. Club</div><div class="muted">Pluralsight 2019 & 2020</div></div>
+        <div class="kpi">
+          <div class="n">100%+ Quota</div>
+          <div class="muted">9 Out of 10 Previous Years</div>
+        </div>
+        <div class="kpi">
+          <div class="n">&gt;550% Pipeline</div>
+          <div class="muted">Pipeline vs. Quota (GitLab FY21)</div>
+        </div>
+        <div class="kpi">
+          <div class="n">2× Pres. Club</div>
+          <div class="muted">Top Quota Achiever (Pluralsight)</div>
+        </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT / SUMMARY -->
     <section id="about">
-      <h2>About</h2>
-      <p>
-        Proven record driving direct and channel sales, exceeding revenue goals, and expanding key accounts.
-        Skilled in long, complex sales cycles; consultative and solution selling; and clear business value communication.
-        Experienced partnering with SEs, directing sales teams, complex account planning and execution, and crafting strategies that maximize revenue and customer satisfaction.
+      <h2>Professional Summary</h2>
+      <p style="line-height: 1.6; font-size: 16px;">
+        Accomplished, growth-focused enterprise sales leader with 15+ years of high-growth technology experience driving multi-million dollar direct and partner sales. Proven track record navigating complex, long-cycle sales motions, expanding strategic key accounts, and articulating clear business value across C-level executive and technical stakeholders. Expert in MEDDICC qualification, strategic account planning, pipeline generation, and sales team leadership. Fluent in English; proficient in Mandarin Chinese and Malay.
       </p>
     </section>
 
     <!-- EXPERTISE -->
     <section id="expertise">
-      <h2>Areas of Expertise</h2>
-      <div class="skills">
-        <span class="chip">Account Development & Growth</span>
-        <span class="chip">Strategic Partnerships</span>
-        <span class="chip">Consultative / Solution Selling</span>
-        <span class="chip">Long & Complex Sales Cycles</span>
-        <span class="chip">Key Account Management</span>
-        <span class="chip">Lead Generation</span>
-        <span class="chip">Government / EDU</span>
-        <span class="chip">DevOps & Software Development</span>
-        <span class="chip">Cloud Apps & Computing</span>
-        <span class="chip">Negotiation</span>
-        <span class="chip">Exceeding Revenue Goals</span>
-        <span class="chip">Salesforce / CRM</span>
-        <span class="chip">MEDDICC</span>
+      <h2>Core Competencies &amp; Expertise</h2>
+      
+      <div class="skills-group">
+        <strong>Sales &amp; Strategy</strong>
+        <div class="skills">
+          <span class="chip">Enterprise Account Planning</span>
+          <span class="chip">Strategic Partnerships</span>
+          <span class="chip">Solution / Consultative Selling</span>
+          <span class="chip">MEDDICC / MEDDPICC</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <strong>Domain &amp; Technology</strong>
+        <div class="skills">
+          <span class="chip">Process Orchestration &amp; Automation</span>
+          <span class="chip">DevOps</span>
+          <span class="chip">Cloud Infrastructure</span>
+          <span class="chip">Data Management</span>
+          <span class="chip">SaaS</span>
+          <span class="chip">CRM</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <strong>Execution &amp; Operations</strong>
+        <div class="skills">
+          <span class="chip">Complex Contract Negotiation</span>
+          <span class="chip">Multi-Threaded Stakeholder Alignment</span>
+          <span class="chip">Self-Sourced Pipeline</span>
+          <span class="chip">ABM Campaigns</span>
+        </div>
       </div>
     </section>
 
@@ -213,85 +246,88 @@
 
         <article class="item">
           <h3>Strategic Account Executive — <strong>Camunda</strong></h3>
-          <div class="muted">Jan 2026 – Present • Remote (Berlin / San Francisco) • Process Orchestration & Automation</div>
+          <div class="muted">Jan 2026 – Present • Remote • Enterprise Process Orchestration &amp; Automation Platform</div>
           <ul>
-            <li>Lead enterprise expansion and net-new acquisition across strategic accounts, aligning end-to-end process orchestration solutions with complex business transformations.</li>
-            <li>Partner cross-functionally with Solution Architects, Sales Engineering, and C-level stakeholders to navigate multi-threaded evaluations and accelerate deal velocity.</li>
-            <li>Consistently build robust pipeline through targeted account-based strategies (ABM) and strict MEDDPICC qualification frameworks.</li>
-            <li>Drive adoption of enterprise automation architectures, delivering quantifiable ROI and standardizing mission-critical workflows across distributed tech stacks.</li>
+            <li>Drive strategic enterprise expansion and net-new acquisition across tier-one accounts, aligning end-to-end process orchestration architecture with enterprise-wide digital transformation goals.</li>
+            <li>Partner cross-functionally with Solution Architects, Sales Engineering, and executive stakeholders to navigate multi-threaded evaluations and accelerate deal velocity.</li>
+            <li>Execute proactive Account-Based Marketing (ABM) and stringent MEDDPICC qualification frameworks, consistently generating top-tier self-sourced pipeline.</li>
           </ul>
         </article>
 
         <article class="item">
           <h3>Senior Strategic Account Manager — <strong>DryvIQ</strong></h3>
-          <div class="muted">Aug 2024 – Jan 2026 • Remote (Ann Arbor, MI) • Unstructured Data Management</div>
+          <div class="muted">Aug 2024 – Jan 2026 • Remote (Ann Arbor, MI) • Enterprise Unstructured Data Management &amp; Governance</div>
           <ul>
-            <li>Large multi-year win with major US financial institution; several other large deals closed and won.</li>
-            <li>Owns key accounts with plans, targeted messaging, and growth strategies for deep penetration and multi-threaded access.</li>
-            <li>Largest share of <em>self-sourced</em> pipeline across the team.</li>
+            <li>Delivered <strong>142% quota attainment</strong> in first full year; built and sustained <strong>400% pipeline coverage</strong> across designated territory.</li>
+            <li>Secured major multi-year enterprise contracts, including a landmark win with a major Tier-1 US financial institution.</li>
+            <li>Formulated and executed multi-threaded penetration strategies across key accounts, driving deep customer alignment and expansion.</li>
+            <li>Delivered the highest volume and percentage of <strong>self-sourced pipeline</strong> across the entire sales team.</li>
           </ul>
         </article>
 
         <article class="item">
           <h3>Strategic Account Executive — <strong>Astronomer</strong></h3>
-          <div class="muted">Jan 2024 – Jul 2024 • Remote (San Francisco, CA) • Data Orchestration (Apache Airflow)</div>
+          <div class="muted">Jan 2024 – Jul 2024 • Remote (San Francisco, CA) • Data Orchestration Platform (Commercial Apache Airflow)</div>
           <ul>
-            <li>100%+ quota both quarters; most self-sourced revenue in region.</li>
-            <li>Used MEDDICC effectively, managing complex cycles with rigorous attention to detail.</li>
-            <li>Drove multi-stakeholder, highly technical evaluations with longer budget cycles.</li>
+            <li>Achieved <strong>100%+ quota attainment</strong> in both consecutive quarters while generating the highest self-sourced revenue in the region.</li>
+            <li>Employed rigorous MEDDICC discipline to navigate complex technical evaluations, managing multi-stakeholder enterprise buying groups with extended budget cycles.</li>
           </ul>
         </article>
 
         <article class="item">
           <h3>Strategic Account Leader — <strong>GitLab</strong></h3>
-          <div class="muted">Dec 2020 – Dec 2023 • Remote (San Francisco, CA) • DevOps Platform</div>
+          <div class="muted">Dec 2020 – Dec 2023 • Remote (San Francisco, CA) • Enterprise DevSecOps Platform</div>
           <ul>
-            <li>Highest net-new ARR in region; exceeded $1M quota via bold ABM strategy.</li>
-            <li>Built pipeline &gt;550% of quota (FY2021); secured largest partner deal in region.</li>
-            <li>111.5% quota in year one (100% net new); 115% in year two.</li>
-            <li>Led region in self-sourced pipeline, new logos, and channel-generated deals through key VARs.</li>
+            <li>Delivered the highest net-new ARR in the region, exceeding $1M+ quota thresholds via targeted enterprise ABM campaigns.</li>
+            <li>Achieved <strong>111.5% quota in Year 1</strong> (100% net new) and <strong>115% quota in Year 2</strong>.</li>
+            <li>Built a qualified pipeline exceeding <strong>550% of annual quota</strong> (FY2021) and closed the region’s largest strategic partner-led transaction.</li>
+            <li>Led the Western region in self-sourced opportunities, new logo acquisition, and indirect revenue through key Value-Added Resellers (VARs).</li>
           </ul>
         </article>
 
         <article class="item">
           <h3>Enterprise Account Executive — <strong>Pluralsight</strong></h3>
-          <div class="muted">Mar 2017 – Dec 2020 • Farmington, UT • Tech Skills Platform</div>
+          <div class="muted">Mar 2017 – Dec 2020 • Farmington, UT • Workforce Tech Skills &amp; Developer Assessment Platform</div>
           <ul>
-            <li>President’s Club (2019, 2020); one of the highest quota achievers.</li>
-            <li>90%+ renewal rates across segments; standardized prospecting motion across the segment.</li>
-            <li>Average deal &gt;$100K; largest deal $743K. 110% then 150% quota attainment in first two years.</li>
+            <li>Earned <strong>President’s Club honors (2019, 2020)</strong> as one of the organization’s top-performing enterprise account executives.</li>
+            <li>Exceeded quota consecutively with <strong>110% attainment (Year 1)</strong> and <strong>150% attainment (Year 2)</strong>; closed enterprise deals up to $743K with an average transaction size &gt;$100K.</li>
+            <li>Maintained a 90%+ net retention/renewal rate across assigned territory and established standardized outbound prospecting playbooks.</li>
           </ul>
         </article>
 
         <article class="item">
           <h3>Director of Business Development — <strong>Hitachi Solutions America</strong></h3>
-          <div class="muted">Jan 2015 – Mar 2017 • San Francisco, CA • Microsoft-centric Services (CRM/Cloud)</div>
+          <div class="muted">Jan 2015 – Mar 2017 • San Francisco, CA • Enterprise Microsoft Cloud &amp; CRM Consulting Services</div>
           <ul>
-            <li>Built greenfield Desert Mountain territory; highest self-sourced pipeline and new logos in West (2016).</li>
-            <li>102% quota in a new, challenging territory; multiple FinServ wins via channel.</li>
-            <li>Led marketing events with vertical focus to expand enterprise pipeline; Holden methodology certified.</li>
+            <li>Built greenfield Desert Mountain territory from inception, achieving 102% quota attainment in a highly competitive market.</li>
+            <li>Led the Western region in self-sourced pipeline creation and new logo acquisition (2016), securing multiple strategic Financial Services wins.</li>
           </ul>
         </article>
 
         <article class="item">
-          <h3>Manager, International Sales & Service — <strong>X-IO Technologies (Xiotech)</strong></h3>
-          <div class="muted">Jan 2011 – Jan 2015 • Colorado Springs, CO • Enterprise Storage</div>
+          <h3>Manager, International Sales &amp; Service — <strong>X-IO Technologies (Xiotech)</strong></h3>
+          <div class="muted">Jan 2011 – Jan 2015 • Colorado Springs, CO • High-Performance Enterprise Storage &amp; Hardware Solutions</div>
           <ul>
-            <li>Managed a team of 5 sellers across Asia; built distributor and channel relationships globally.</li>
-            <li>Delivered 200% YoY revenue growth; developed brand-new markets and expanded enterprise pipeline.</li>
-            <li>Closed multiple $500K+ deals, including the largest cloud deal in company history to date.</li>
+            <li>Led an international team of 5 account executives across APAC; drove <strong>200% year-over-year revenue growth</strong> across new geographic markets.</li>
+            <li>Closed multiple $500K+ enterprise accounts, including the largest cloud storage transaction in company history.</li>
           </ul>
         </article>
 
       </div>
     </section>
 
-    <!-- EDUCATION -->
+    <!-- EDUCATION & CREDENTIALS -->
     <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>MBA</strong> — Utah State University, Logan, UT</li>
-        <li><strong>B.A., Political Science</strong> — Brigham Young University, Provo, UT</li>
+      <h2>Education &amp; Credentials</h2>
+      <ul class="education-list">
+        <li class="education-item">
+          <strong>Master of Business Administration (MBA)</strong>
+          <span class="muted">Utah State University — Logan, UT</span>
+        </li>
+        <li class="education-item">
+          <strong>Bachelor of Arts (B.A.), Political Science</strong>
+          <span class="muted">Brigham Young University — Provo, UT</span>
+        </li>
       </ul>
     </section>
 
@@ -301,7 +337,8 @@
       <p>
         <a href="mailto:steve@steveclarkwins.com">steve@steveclarkwins.com</a> •
         <a href="tel:+18016998762">(801) 699-8762</a> •
-        <a href="https://www.linkedin.com/in/steve-clark-wins/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://linkedin.com/in/steve-clark-wins" target="_blank" rel="noopener">LinkedIn</a> •
+        <a href="https://steveclarkwins.com">steveclarkwins.com</a>
       </p>
     </section>
   </main>
