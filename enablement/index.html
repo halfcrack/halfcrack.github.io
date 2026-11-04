@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steve Clark — Sales Enablement &amp; Revenue Leader</title>
+  <meta name="description" content="Steve Clark — sales and revenue enablement leader with 15+ years in tech. Led 5 account executives, established prospecting playbooks, and consistent quota attainment." />
+
+  <!-- Favicon / site icon -->
+  <link rel="icon" type="image/png" href="../favicon.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------------- THEME TOKENS ---------------- */
+    :root{
+      --bg:#0b1220; --card:#121a2b; --muted:#90a0c2; --text:#e9efff;
+      --accent:#5ca9ff; --accent2:#86ffc2; --ring: rgba(92,169,255,.35);
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --border: rgba(134,255,194,.12);
+    }
+    /* Light theme overrides */
+    :root[data-theme="light"]{
+      --bg:#f7f9fc; --card:#ffffff; --muted:#5a6b85; --text:#10223a;
+      --accent:#0b64ff; --accent2:#0dcf8f; --ring: rgba(11,100,255,.22);
+      --border: rgba(16,34,58,.12);
+      --shadow:0 10px 30px rgba(16,34,58,.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      background:
+        radial-gradient(1200px 700px at 90% -10%, rgba(92,169,255,.12), transparent 60%),
+        radial-gradient(900px 600px at -10% 30%, rgba(134,255,194,.12), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      transition: background .3s ease, color .3s ease;
+    }
+    :root[data-theme="light"] html, :root[data-theme="light"] body{
+      background:
+        radial-gradient(1200px 700px at 90% -10%, rgba(11,100,255,.06), transparent 60%),
+        radial-gradient(900px 600px at -10% 30%, rgba(13,207,143,.06), transparent 60%),
+        var(--bg);
+    }
+
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(to bottom, color-mix(in oklab, var(--bg), transparent 30%), transparent);
+      border-bottom:1px solid var(--border);
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:800}
+    .logo{
+      width:22px;height:22px;border-radius:6px;object-fit:cover;
+      box-shadow:0 0 10px color-mix(in oklab, var(--accent), #000 20%);
+    }
+    .links a{margin-left:14px;opacity:.9}
+
+    .theme-toggle{
+      display:inline-flex;align-items:center;gap:8px;
+      background:transparent;border:1px solid var(--border);color:var(--text);
+      padding:8px 12px;border-radius:999px;cursor:pointer;
+    }
+    .theme-toggle:focus{outline:2px solid var(--ring);outline-offset:2px}
+
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:56px 0}
+    h1{font-size:44px;line-height:1.1;margin:10px 0 6px}
+    .subtitle{color:var(--muted);font-size:17px;line-height:1.5}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{
+      display:inline-flex;gap:10px;align-items:center;
+      background:linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent), #000 20%));
+      color:white;padding:12px 18px;border-radius:12px;font-weight:700;border:0;box-shadow:var(--shadow)
+    }
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid color-mix(in oklab, var(--accent), transparent 60%);box-shadow:none}
+
+    .card{
+      background:linear-gradient(180deg, color-mix(in oklab, #fff, transparent 94%), color-mix(in oklab, #fff, transparent 96%));
+      border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)
+    }
+
+    .headshot{
+      width:120px;height:120px;border-radius:50%;object-fit:cover;
+      border:3px solid color-mix(in oklab, var(--accent), #fff 10%);
+      box-shadow:0 6px 16px color-mix(in oklab, #000, transparent 70%);
+    }
+
+    section{padding:18px 0}
+    section h2{font-size:26px;margin:6px 0 14px;letter-spacing:-0.2px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .kpi{grid-column:span 4;background:var(--card);border:1px solid color-mix(in oklab, var(--border), #000 10%);
+      border-radius:var(--radius);padding:18px}
+    .kpi .n{font-size:32px;font-weight:800;color:var(--accent)}
+    .muted{color:var(--muted)}
+    
+    .skills-group{margin-bottom:14px}
+    .skills-group strong{display:block;margin-bottom:6px;color:var(--text);font-size:15px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{border:1px solid color-mix(in oklab, var(--accent2), transparent 65%);background:color-mix(in oklab, var(--accent2), transparent 90%);
+      color:color-mix(in oklab, var(--text), #fff 10%);padding:6px 12px;border-radius:999px;font-weight:600;font-size:13.5px}
+
+    .timeline{display:grid;gap:14px}
+    .item{background:var(--card);border:1px solid color-mix(in oklab, var(--border), #000 10%);border-radius:var(--radius);padding:20px}
+    .item h3{margin:.2rem 0;font-size:18px}
+    .item ul{margin:10px 0 0 0;padding-left:20px}
+    .item li{margin-bottom:6px;line-height:1.45}
+
+    .education-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .education-item{background:var(--card);border:1px solid color-mix(in oklab, var(--border), #000 10%);border-radius:var(--radius);padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+    @media (max-width: 600px){
+      .education-item{flex-direction:column;align-items:flex-start;gap:4px}
+    }
+
+    footer{padding:36px 0;margin-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--muted)}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      h1{font-size:36px}
+      .kpi{grid-column:span 12}
+      .hero-aside{display:flex;gap:16px;align-items:center}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <img src="../favicon.png" alt="" class="logo" />
+          <span>Steve Clark</span>
+        </div>
+        <div class="links" role="navigation" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark theme">🌙 Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Sales Enablement &amp; Revenue Leader</h1>
+        <p class="subtitle">
+          Enterprise sales leader with 15+ years in high-growth technology who has led an international team of 5 account executives across APAC and established standardized outbound prospecting playbooks. Consistent quota attainment of 100%+ in 9 of 10 previous years. Retention results: 90%+ net retention at Pluralsight, a 92% renewal rate at DryvIQ, and 115% net retention at GitLab. Fluent in English; proficient in Mandarin Chinese and Malay.
+        </p>
+        <div class="cta">
+          <a class="btn" href="mailto:steve@steveclarkwins.com">Email Me</a>
+          <a class="btn secondary" href="https://linkedin.com/in/steve-clark-wins" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn secondary" href="../Steve_Clark_Resume_Enablement.pdf" download>Download Résumé (PDF)</a>
+        </div>
+      </div>
+
+      <aside class="card hero-aside">
+        <div style="display:grid;gap:10px">
+          <img src="../headshot.jpg" alt="Headshot of Steve Clark" class="headshot" />
+          <div><span class="muted">Location</span><div>Eagle Mountain, UT (Remote-ready)</div></div>
+          <div><span class="muted">Phone</span><div><a href="tel:+18016998762">(801) 699-8762</a></div></div>
+          <div><span class="muted">Email</span><div><a href="mailto:steve@steveclarkwins.com">steve@steveclarkwins.com</a></div></div>
+          <div><span class="muted">Website</span><div><a href="https://steveclarkwins.com">steveclarkwins.com</a></div></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- KPIs / QUICK WINS -->
+    <section id="wins">
+      <div class="grid">
+        <div class="kpi">
+          <div class="n">90%+ Retention</div>
+          <div class="muted">Net retention/renewal (Pluralsight)</div>
+        </div>
+        <div class="kpi">
+          <div class="n">92% Renewal</div>
+          <div class="muted">Renewal rate (DryvIQ)</div>
+        </div>
+        <div class="kpi">
+          <div class="n">115% Retention</div>
+          <div class="muted">Net retention (GitLab)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / SUMMARY -->
+    <section id="about">
+      <h2>Professional Summary</h2>
+      <p style="line-height: 1.6; font-size: 16px;">
+        Enterprise sales leader with 15+ years in high-growth technology. Led an international team of 5 account executives across APAC at X-IO Technologies and established standardized outbound prospecting playbooks at Pluralsight. Consistent quota attainment of 100%+ in 9 of 10 previous years, including President’s Club honors (2019, 2020). Managed existing customers, expansion, and renewals at Pluralsight and DryvIQ, and paired new business with a book of existing customers at GitLab. Retention results include a <strong>90%+ net retention/renewal rate</strong> at Pluralsight, a <strong>92% renewal rate</strong> at DryvIQ, and <strong>115% net retention</strong> at GitLab. Cross-functional partner to Solution Architects, Sales Engineering, executive stakeholders, and value-added resellers. Fluent in English; proficient in Mandarin Chinese and Malay.
+      </p>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise">
+      <h2>Core Competencies &amp; Expertise</h2>
+      
+      <div class="skills-group">
+        <strong>Sales &amp; Strategy</strong>
+        <div class="skills">
+          <span class="chip">Enterprise Account Planning</span>
+          <span class="chip">Prospecting Playbooks</span>
+          <span class="chip">Strategic Partnerships</span>
+          <span class="chip">Solution / Consultative Selling</span>
+          <span class="chip">MEDDICC / MEDDPICC</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <strong>Domain &amp; Technology</strong>
+        <div class="skills">
+          <span class="chip">Process Orchestration &amp; Automation</span>
+          <span class="chip">DevOps</span>
+          <span class="chip">Cloud Infrastructure</span>
+          <span class="chip">Data Management</span>
+          <span class="chip">SaaS</span>
+          <span class="chip">CRM</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <strong>Execution &amp; Operations</strong>
+        <div class="skills">
+          <span class="chip">Complex Contract Negotiation</span>
+          <span class="chip">Multi-Threaded Stakeholder Alignment</span>
+          <span class="chip">ABM Campaigns</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Professional Experience</h2>
+      <div class="timeline">
+
+        <article class="item">
+          <h3>Enterprise Account Executive — <strong>Scalestack</strong></h3>
+          <div class="muted">Oct 2026 – Present • Remote • AI-Powered GTM Data &amp; Enrichment Platform</div>
+          <ul>
+            <li>Partner cross-functionally to drive adoption and satisfaction while serving as the primary point of contact for existing customers.</li>
+            <li>Drive account expansion and net revenue retention across the customer base.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <h3>Strategic Account Executive — <strong>Camunda</strong></h3>
+          <div class="muted">Jan 2026 – Sep 2026 • Remote • Enterprise Process Orchestration &amp; Automation Platform</div>
+          <ul>
+            <li>Partner cross-functionally with Solution Architects, Sales Engineering, and executive stakeholders to navigate multi-threaded evaluations.</li>
+            <li>Apply MEDDPICC qualification frameworks with those partners across tier-one accounts.</li>
+            <li>Align end-to-end process orchestration architecture with enterprise-wide digital transformation goals.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <h3>Senior Strategic Account Manager — <strong>DryvIQ</strong></h3>
+          <div class="muted">Aug 2024 – Jan 2026 • Remote (Ann Arbor, MI) • Enterprise Unstructured Data Management &amp; Governance</div>
+          <ul>
+            <li>Managed existing customers, expansion, and renewals, with a <strong>92% renewal rate</strong>.</li>
+            <li>Delivered <strong>142% quota attainment</strong> in the first full year and sustained <strong>400% pipeline coverage</strong> across the designated territory.</li>
+            <li>Secured major multi-year enterprise contracts, including a landmark win with a major Tier-1 US financial institution.</li>
+            <li>Drove deep customer alignment and expansion through multi-threaded account strategies.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <h3>Strategic Account Executive — <strong>Astronomer</strong></h3>
+          <div class="muted">Jan 2024 – Jul 2024 • Remote (San Francisco, CA) • Data Orchestration Platform (Commercial Apache Airflow)</div>
+          <ul>
+            <li>Achieved <strong>100%+ quota attainment</strong> in both consecutive quarters.</li>
+            <li>Employed rigorous MEDDICC discipline to navigate complex technical evaluations, managing multi-stakeholder enterprise buying groups with extended budget cycles.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <h3>Strategic Account Leader — <strong>GitLab</strong></h3>
+          <div class="muted">Dec 2020 – Dec 2023 • Remote (San Francisco, CA) • Enterprise DevSecOps Platform</div>
+          <ul>
+            <li>Covered new business plus a book of existing customers, expansion, and renewals, delivering <strong>115% net retention</strong>.</li>
+            <li>Achieved <strong>111.5% quota in Year 1</strong> and <strong>115% quota in Year 2</strong>, exceeding $1M+ quota thresholds.</li>
+            <li>Built a qualified pipeline exceeding <strong>550% of annual quota</strong> (FY2021) and closed the region’s largest strategic partner-led transaction.</li>
+            <li>Drove indirect revenue through key Value-Added Resellers (VARs).</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <h3>Enterprise Account Executive — <strong>Pluralsight</strong></h3>
+          <div class="muted">Mar 2017 – Dec 2020 • Farmington, UT • Workforce Tech Skills &amp; Developer Assessment Platform</div>
+          <ul>
+            <li>Established standardized outbound prospecting playbooks.</li>
+            <li>Managed existing customers, expansion, and renewals, with consistently strong renewal rates and a <strong>90%+ net retention/renewal rate</strong>.</li>
+            <li>Earned <strong>President’s Club honors (2019, 2020)</strong>; exceeded quota with <strong>110% attainment (Year 1)</strong> and <strong>150% attainment (Year 2)</strong>.</li>
+            <li>Closed enterprise deals up to $743K with an average transaction size &gt;$100K.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <h3>Director of Business Development — <strong>Hitachi Solutions America</strong></h3>
+          <div class="muted">Jan 2015 – Mar 2017 • San Francisco, CA • Enterprise Microsoft Cloud &amp; CRM Consulting Services</div>
+          <ul>
+            <li>Achieved 102% quota attainment in the Desert Mountain territory within enterprise Microsoft Cloud and CRM consulting.</li>
+            <li>Secured multiple strategic Financial Services wins.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <h3>Manager, International Sales &amp; Service — <strong>X-IO Technologies (Xiotech)</strong></h3>
+          <div class="muted">Jan 2011 – Jan 2015 • Colorado Springs, CO • High-Performance Enterprise Storage &amp; Hardware Solutions</div>
+          <ul>
+            <li>Led an international team of 5 account executives across APAC.</li>
+            <li>Drove <strong>200% year-over-year revenue growth</strong> across new geographic markets.</li>
+            <li>Closed multiple $500K+ enterprise accounts, including the largest cloud storage transaction in company history.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION & CREDENTIALS -->
+    <section id="education">
+      <h2>Education &amp; Credentials</h2>
+      <ul class="education-list">
+        <li class="education-item">
+          <strong>Master of Business Administration (MBA)</strong>
+          <span class="muted">Utah State University — Logan, UT</span>
+        </li>
+        <li class="education-item">
+          <strong>Bachelor of Arts (B.A.), Political Science</strong>
+          <span class="muted">Brigham Young University — Provo, UT</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <a href="mailto:steve@steveclarkwins.com">steve@steveclarkwins.com</a> •
+        <a href="tel:+18016998762">(801) 699-8762</a> •
+        <a href="https://linkedin.com/in/steve-clark-wins" target="_blank" rel="noopener">LinkedIn</a> •
+        <a href="https://steveclarkwins.com">steveclarkwins.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Steve Clark • steveclarkwins.com</div>
+  </footer>
+
+  <script>
+    // --- Year stamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // --- Theme: default to user's OS preference; persist toggle in localStorage
+    (function(){
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+      if(saved){
+        root.setAttribute('data-theme', saved);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
+        root.setAttribute('data-theme','light');
+      }
+      const btn = document.getElementById('themeToggle');
+      const updateLabel = () => {
+        const t = root.getAttribute('data-theme') || 'dark';
+        btn.textContent = (t === 'light') ? '🌙 Theme' : '☀️ Theme';
+        btn.setAttribute('aria-pressed', t === 'light' ? 'false' : 'true');
+      };
+      updateLabel();
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateLabel();
+      });
+    })();
+  </script>
+</body>
+</html>
